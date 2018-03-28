@@ -1,0 +1,111 @@
+const byte startPin = 7;
+const byte endPin = 14;
+const byte sw = 6;
+
+void setup()
+{
+  for (byte i = startPin; i<= endPin; i++) {
+pinMode(i, OUTPUT);
+}
+   pinMode(sw,INPUT); 
+}
+void loop()
+{
+  byte i;
+  byte lightPin = startPin;
+  boolean val = digitalRead(6);
+
+  if (val)
+  {
+            // 所有 LED OFF
+      for (i=startPin; i<= endPin; i++) 
+      {
+        digitalWrite(i,LOW);
+      }
+      delay(200);
+      for (i=startPin; i<= endPin; i++) 
+      {
+        digitalWrite(i,HIGH);
+      }
+      delay(200);
+      for (i=startPin; i<= endPin; i++) 
+      {
+        digitalWrite(i,LOW);
+      }
+      delay(200);
+      for (i=startPin; i<= endPin; i++) 
+      {
+        digitalWrite(i,HIGH);
+      }
+      delay(200);
+      for (i=startPin; i<= endPin; i++) 
+      {
+        digitalWrite(i,LOW);
+      }
+      // 設定要點亮的 LED 位置
+      // 如果點亮的腳位編號小於結束腳位,
+      
+      // 否則從頭開始
+      for (i=startPin; i<= endPin; i++) {
+      digitalWrite(i, HIGH);
+      delay (200);
+      digitalWrite(i,LOW);
+      delay (200);
+      }
+      for (i=startPin; i<= endPin; i++) 
+      {
+        digitalWrite(i,LOW);
+      }
+      delay(200);
+      for (i=startPin; i<= endPin; i++) 
+      {
+        digitalWrite(i,HIGH);
+      }
+      delay(200);
+      for (i=startPin; i<= endPin; i++) 
+      {
+        digitalWrite(i,LOW);
+      }
+      delay(200);
+      for (i=startPin; i<= endPin; i++) 
+      {
+        digitalWrite(i,HIGH);
+      }
+      delay(200);
+      for (i=startPin; i<= endPin; i++) 
+      {
+        digitalWrite(i,LOW);
+      }
+      for (i=endPin; i>=startPin; i--)
+      {
+            digitalWrite(i, HIGH);
+            delay (200);
+            digitalWrite(i,LOW);
+            delay (200);
+      }
+  }
+  else
+  {
+        // 所有 LED OFF
+        for (i=startPin; i<= endPin; i++) {
+        digitalWrite(i,LOW);
+        }
+        // 設定要點亮的 LED 位置
+        // 如果點亮的腳位編號小於結束腳位,
+        
+        // 否則從頭開始
+        for (i=startPin; i<= endPin; i++) {
+        digitalWrite(i, HIGH);
+        delay (200);
+        digitalWrite(i,LOW);
+        delay (200);
+        }
+        for (i=endPin; i>=startPin; i--) {
+        digitalWrite(i, HIGH);
+        delay (200);
+        digitalWrite(i,LOW);
+        delay (200);
+        }
+
+  }
+}
